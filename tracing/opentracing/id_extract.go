@@ -6,8 +6,8 @@ package grpc_opentracing
 import (
 	"strings"
 
-	"github.com/grpc-ecosystem/go-grpc-middleware/tags"
-	"github.com/opentracing/opentracing-go"
+	"github.com/lonnblad/go-grpc-middleware/tags"
+	opentracing "github.com/opentracing/opentracing-go"
 	"google.golang.org/grpc/grpclog"
 )
 

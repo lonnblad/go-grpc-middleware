@@ -4,12 +4,11 @@ import (
 	"encoding/json"
 	"io"
 	"testing"
-
 	"time"
 
-	"github.com/grpc-ecosystem/go-grpc-middleware/tags"
-	"github.com/grpc-ecosystem/go-grpc-middleware/testing"
-	pb_testproto "github.com/grpc-ecosystem/go-grpc-middleware/testing/testproto"
+	"github.com/lonnblad/go-grpc-middleware/tags"
+	"github.com/lonnblad/go-grpc-middleware/testing"
+	pb_testproto "github.com/lonnblad/go-grpc-middleware/testing/testproto"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"

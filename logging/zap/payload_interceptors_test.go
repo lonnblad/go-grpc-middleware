@@ -1,26 +1,22 @@
 package grpc_zap_test
 
 import (
+	"io"
 	"runtime"
+	"strings"
 	"testing"
 
-	"strings"
-
-	"github.com/stretchr/testify/suite"
-	"google.golang.org/grpc"
-
-	"io"
-
-	"github.com/grpc-ecosystem/go-grpc-middleware"
-	"github.com/grpc-ecosystem/go-grpc-middleware/tags"
-	pb_testproto "github.com/grpc-ecosystem/go-grpc-middleware/testing/testproto"
+	"github.com/lonnblad/go-grpc-middleware"
+	"github.com/lonnblad/go-grpc-middleware/logging/zap"
+	"github.com/lonnblad/go-grpc-middleware/tags"
+	pb_testproto "github.com/lonnblad/go-grpc-middleware/testing/testproto"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"golang.org/x/net/context"
-
-	"github.com/grpc-ecosystem/go-grpc-middleware/logging/zap"
+	"github.com/stretchr/testify/suite"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
+	"golang.org/x/net/context"
+	"google.golang.org/grpc"
 )
 
 func TestZapPayloadSuite(t *testing.T) {

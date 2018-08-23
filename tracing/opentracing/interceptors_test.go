@@ -6,20 +6,18 @@ package grpc_opentracing_test
 import (
 	"encoding/json"
 	"errors"
+	"fmt"
+	"io"
+	"net/http"
 	"strconv"
 	"strings"
 	"testing"
 
-	"fmt"
-	"net/http"
-
-	"io"
-
-	"github.com/grpc-ecosystem/go-grpc-middleware"
-	"github.com/grpc-ecosystem/go-grpc-middleware/tags"
-	grpc_testing "github.com/grpc-ecosystem/go-grpc-middleware/testing"
-	pb_testproto "github.com/grpc-ecosystem/go-grpc-middleware/testing/testproto"
-	grpc_opentracing "github.com/grpc-ecosystem/go-grpc-middleware/tracing/opentracing"
+	grpc_middleware "github.com/lonnblad/go-grpc-middleware"
+	grpc_ctxtags "github.com/lonnblad/go-grpc-middleware/tags"
+	grpc_testing "github.com/lonnblad/go-grpc-middleware/testing"
+	pb_testproto "github.com/lonnblad/go-grpc-middleware/testing/testproto"
+	grpc_opentracing "github.com/lonnblad/go-grpc-middleware/tracing/opentracing"
 	opentracing "github.com/opentracing/opentracing-go"
 	"github.com/opentracing/opentracing-go/mocktracer"
 	"github.com/stretchr/testify/assert"
@@ -245,7 +243,7 @@ func (jaegerFormatInjector) Inject(ctx mocktracer.MockSpanContext, carrier inter
 type jaegerFormatExtractor struct{}
 
 func (jaegerFormatExtractor) Extract(carrier interface{}) (mocktracer.MockSpanContext, error) {
-	rval := mocktracer.MockSpanContext{0, 0, true, nil}
+	rval := mocktracer.MockSpanContext{Sampled: true}
 	reader, ok := carrier.(opentracing.TextMapReader)
 	if !ok {
 		return rval, opentracing.ErrInvalidCarrier

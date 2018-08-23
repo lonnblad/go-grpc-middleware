@@ -4,9 +4,9 @@ import (
 	"path"
 	"time"
 
-	"github.com/grpc-ecosystem/go-grpc-middleware"
-	"github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap"
-	"github.com/grpc-ecosystem/go-grpc-middleware/tags/zap"
+	"github.com/lonnblad/go-grpc-middleware"
+	"github.com/lonnblad/go-grpc-middleware/logging/zap/ctxzap"
+	"github.com/lonnblad/go-grpc-middleware/tags/zap"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 	"golang.org/x/net/context"

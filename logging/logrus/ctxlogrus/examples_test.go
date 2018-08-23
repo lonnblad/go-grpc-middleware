@@ -1,8 +1,8 @@
 package ctxlogrus_test
 
 import (
-	"github.com/grpc-ecosystem/go-grpc-middleware/logging/logrus/ctxlogrus"
-	"github.com/grpc-ecosystem/go-grpc-middleware/tags"
+	"github.com/lonnblad/go-grpc-middleware/logging/logrus/ctxlogrus"
+	"github.com/lonnblad/go-grpc-middleware/tags"
 	"github.com/sirupsen/logrus"
 	"golang.org/x/net/context"
 )
