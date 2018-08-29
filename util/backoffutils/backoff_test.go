@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grpc-ecosystem/go-grpc-middleware/util/backoffutils"
+	"github.com/lonnblad/go-grpc-middleware/util/backoffutils"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -4,10 +4,10 @@
 package grpc_opentracing
 
 import (
-	"github.com/grpc-ecosystem/go-grpc-middleware"
-	"github.com/grpc-ecosystem/go-grpc-middleware/tags"
-	"github.com/grpc-ecosystem/go-grpc-middleware/util/metautils"
-	"github.com/opentracing/opentracing-go"
+	"github.com/lonnblad/go-grpc-middleware"
+	"github.com/lonnblad/go-grpc-middleware/tags"
+	"github.com/lonnblad/go-grpc-middleware/util/metautils"
+	opentracing "github.com/opentracing/opentracing-go"
 	"github.com/opentracing/opentracing-go/ext"
 	"github.com/opentracing/opentracing-go/log"
 	"golang.org/x/net/context"

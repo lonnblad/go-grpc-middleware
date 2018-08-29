@@ -6,15 +6,14 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/lonnblad/go-grpc-middleware/logging/zap"
+	pb_testproto "github.com/lonnblad/go-grpc-middleware/testing/testproto"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
+	"go.uber.org/zap/zapcore"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
-
-	"github.com/grpc-ecosystem/go-grpc-middleware/logging/zap"
-	pb_testproto "github.com/grpc-ecosystem/go-grpc-middleware/testing/testproto"
-	"go.uber.org/zap/zapcore"
 )
 
 func customClientCodeToLevel(c codes.Code) zapcore.Level {
